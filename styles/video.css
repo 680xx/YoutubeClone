@@ -1,0 +1,87 @@
+
+.thumbnail {
+  width: 100%;
+/*      width: 300px;                      Enbart width/height = correct aspect ratio */
+/*      object-fit: cover;                 Visar enbart en del av bilden för att behålla proportionerna. */
+/*      object-position: left;             Bestämmer vilken del av bilden som ska visas. */
+/*      object-fit: contain;               Krymper bilden tills den får plats inom width/height */
+/*      border-width: 2px; */
+/*      border-style: solid; */
+/*      border-color: red; */               
+}
+
+.video-title {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;               /* 500 motsvarar medium, 700 motsvarar bold */
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.profile-picture {
+  width: 36px;
+  border-radius: 50px;
+}
+
+.thumbnail-row {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.video-author,                                          /* , gör att man ger samma egenskaper till både author/stats */
+.video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);                             /* Detta kommando är mer specifikt än om man kör det under body och får därför högre prioritet.
+                                                           Det medför att denna färg kommer gälla (Override) för detta element även om man ändrar i body. */
+}
+
+.video-author {
+  margin-bottom: 4px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+@media (max-width: 750px) {               
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {        /* CSS kommer bara aktiveras om skärmen är mellan 751px och 999px */
+  .video-grid {
+    grid-template-columns: 1fr, 1fr, 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .video-grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.video-time {
+  font-size: 12px;
+  font-weight: 500;
+  /* padding-left: 4px;
+     padding-right: 4px;
+     padding-top: 4px;
+     padding-bottom: 4px; 
+     padding: 1px 2px 3px 4px                                 top 1px, right 2px, bottom 3px, left 4px - fungerar lika med margin */
+  padding: 4px;                                            /* Kör 4px padding på alla sidor */
+  border-radius: 2px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+}
